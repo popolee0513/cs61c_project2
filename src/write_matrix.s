@@ -82,6 +82,12 @@ write_matrix:
     li t0, -1
     beq a0, t0, fclose_error
 
+    # free memory 
+    mv a0 s5
+    call free
+    mv a0 s1
+    call free
+
     # Epilogue
     lw s0, 0(sp)
     lw s1, 4(sp)

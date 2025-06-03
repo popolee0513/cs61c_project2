@@ -66,6 +66,10 @@ read_matrix:
     lw t2, 4(s4)          
     sw t2, 0(s2)    
 
+    # free memory
+    mv a0 s4
+    call free
+
     # malloc matrix
     mul t3, t0, t2        # total elements
     li t4, 4
